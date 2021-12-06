@@ -1,9 +1,11 @@
-type ButtonProps = {
-    children?: string; //interrogação para ser opcional
-}
+import { ButtonHTMLAttributes } from 'react'
+
+import '../styles/button.scss'
+
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
 
 export function Button(props: ButtonProps) {
     return(
-        <button>{props.children || 'Clique aqui'}</button>
+        <button className="button" {...props} />
     )
 }
